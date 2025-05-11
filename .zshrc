@@ -71,9 +71,20 @@ export PATH="/Users/ezhkinkot/.local/bin:$PATH"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT
 
-# === fzf ===
+# === FZF ===
 eval "$(fzf --zsh)"
 
-# === eza ===
+# == setup fzf theme ==
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626
+  --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#00DA00
+  --color=prompt:#d7005f,spinner:#af5fff,pointer:#21ffe5,header:#87afaf
+  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label="Finds anything)" --border-label-pos="0" --preview-window="border-rounded"
+  --prompt="‚ùØ " --marker="ÔÅÜ " --pointer="Û∞ßÇ" --separator="‚îÄ"
+  --scrollbar="‚îÇ" --layout="reverse" --info="right"'
+
+
+# === Eza ===
 alias ls="eza --icons=always"
 
