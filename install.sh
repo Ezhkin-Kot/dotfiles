@@ -20,7 +20,7 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 echo ""
-echo "Oh, what a boring terminal you have! Don't worry, now we will fix it)"
+echo "Oh, what a boring terminal you have! Don't worry, now we will fix it."
 echo ""
 echo "             ${color1}Meow            ${color2}Meow            ${color3}Meow"
 echo "             ${color1}/               ${color2}/               ${color3}/"
@@ -30,7 +30,11 @@ echo ""
 printCat "$color2" "Please, give me your sudo password"
 sudo -v
 
+# Install Homebrew
 printCat "$color3" "Let's install package manager"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo ""
 
-
+# Install oh-my-zsh
+printCat "$color3" "Now I will install zsh plugin manager"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
