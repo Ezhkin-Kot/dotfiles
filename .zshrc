@@ -71,4 +71,9 @@ export PATH="/Users/ezhkinkot/.local/bin:$PATH"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT
 
+# === fzf ===
+eval "$(fzf --zsh)"
+
+# === eza ===
+alias ls="eza --icons=always"
 
