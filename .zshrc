@@ -84,7 +84,16 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --prompt="‚ùØ " --marker="ÔÅÜ " --pointer="Û∞ßÇ" --separator="‚îÄ"
   --scrollbar="‚îÇ" --layout="reverse" --info="right"'
 
-
 # === Eza ===
 alias ls="eza --icons=always"
 
+# === Bat ===
+export BAT_THEME="Catppuccin Mocha"
+
+# === Zoxide ===
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+# === TheFuck ===
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
