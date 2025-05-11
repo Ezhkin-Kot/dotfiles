@@ -27,5 +27,10 @@ echo "             ${color1}/               ${color2}/               ${color3}/"
 echo "         ${color1}/ᐠ｡ꞈ｡ᐟ\\         ${color2}/ᐠ｡ꞈ｡ᐟ\\         ${color3}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
 echo ""
 
-printCat "$color1" "Please, give me your sudo password"
+printCat "$color2" "Please, give me your sudo password"
 sudo -v
+
+printCat "$color3" "Let's install package manager"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
