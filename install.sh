@@ -56,4 +56,9 @@ sudo cp -r .fzf-git.sh ~/
 sudo cat .gitconfig > ~/.gitconfig
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
+# Install JetBrains Mono Nerd font
+printCat "$color3" "Nerd font is required for this config. I will install the best for you."
+sudo cp -r fonts/* ~/Library/Fonts
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
+printCat "$color2" "Congratulations! Now your terminal has become excellent!"
