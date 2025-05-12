@@ -32,6 +32,7 @@ Set up JetBrains Mono Nerd font in your terminal preferences.
 After installation is complete, restart your terminal to apply all changes.
 
 ## Installed Packages
+- iTerm - a full featured terminal emulation program for MacOS.
 - `oh-my-zsh` – framework for managing Zsh configuration.
 - `zsh-autosuggestions` – suggests commands as you type, based on your history.
 -	`zsh-syntax-highlighting` – adds syntax highlighting to your Zsh command line.

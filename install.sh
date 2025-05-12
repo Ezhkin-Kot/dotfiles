@@ -42,6 +42,7 @@ echo "   ${color5}––––––––––––––––––––�
 
 # Install packages
 printCat "$color3" "And I will install some useful packages"
+brew install --cask iterm2
 brew install bat eza fd fzf gcc neovim obfs4proxy openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
