@@ -54,8 +54,22 @@ echo "   ${color5}––––––––––––––––––––�
 printCat "$color1" "And some other configs"
 sudo cp -r bat ~/.config/
 sudo cp -r .fzf-git.sh ~/
-sudo cat .gitconfig > ~/.gitconfig
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+
+# Configure Git
+printCat "$color1" "Now let's configure Git for your global environment" 
+read -p "Enter your Git user name: " git_username
+read -p "Enter your Git email: " git_email
+
+git config --global user.name "$git_username"
+git config --global user.email "$git_email"
+git config --global core.editor "nvim"
+git config --global color.ui "auto"
+
+echo ""
+echo "${color2} Git has been configured successfully!"
+echo "Current Git config:"
+git config --global --list
 
 # Install JetBrains Mono Nerd font
 printCat "$color3" "Nerd font is required for this config. I will install the best for you."
