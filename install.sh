@@ -45,4 +45,15 @@ printCat "$color3" "And I will install some useful packages"
 brew install bat eza fd fzf gcc neovim npm obfs4proxy openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
+# Rewrite configs
+printCat "$color1" "I need to change your .zshrc config. This may request your password again."
+sudo cat .zshrc > ~/.zshrc
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+
+printCat "$color1" "And some other configs"
+sudo cp -r bat ~/.config/
+sudo cp -r .fzf-git.sh ~/
+sudo cat .gitconfig > ~/.gitconfig
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+
 
