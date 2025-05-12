@@ -59,3 +59,7 @@ After installation is complete, restart your terminal to apply all changes.
 Fonts
 - JetBrains Mono Nerd Font (included in fonts/)
 
+## NeoVim
+
+After all you also can install my NeoVim config:
+https://github.com/Ezhkin-Kot/nvim
