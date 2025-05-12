@@ -19,6 +19,7 @@ chmod +x ./install.sh
 
 The script will:
 -	Install Homebrew if it’s not already installed
+- Install iTerm2 terminal emulator
 -	Install useful CLI tools and plugins
 -	Set up oh-my-zsh, powerlevel10k, and custom configurations
 -	Install Nerd Fonts for terminal icons
