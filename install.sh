@@ -2,6 +2,7 @@ color1="\033[1;31m"
 color2="\033[1;32m"
 color3="\033[1;34m"
 color4="\033[1;33m"
+color5="\033[1;35m"
 defaultColor="\033[0m"
 
 printCat() {
@@ -11,7 +12,6 @@ printCat() {
   echo "             ${color}${message}"
   echo "             ${color}/"
   echo "         ${color}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
-
 }
 
 if [ "$EUID" -eq 0 ]; then
@@ -25,7 +25,7 @@ echo ""
 echo "             ${color1}Meow            ${color2}Meow            ${color3}Meow"
 echo "             ${color1}/               ${color2}/               ${color3}/"
 echo "         ${color1}/ᐠ｡ꞈ｡ᐟ\\         ${color2}/ᐠ｡ꞈ｡ᐟ\\         ${color3}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
-echo ""
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 printCat "$color2" "Please, give me your sudo password"
 sudo -v
@@ -33,8 +33,16 @@ sudo -v
 # Install Homebrew
 printCat "$color3" "Let's install package manager"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo ""
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install oh-my-zsh
-printCat "$color3" "Now I will install zsh plugin manager"
+printCat "$color1" "Now I will install zsh plugin manager"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+
+# Install packages
+printCat "$color3" "And I will install some useful packages"
+brew install bat eza fd fzf gcc neovim npm obfs4proxy openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k
+echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+
+
