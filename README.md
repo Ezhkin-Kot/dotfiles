@@ -22,6 +22,7 @@ The script will:
 - Install iTerm2 terminal emulator
 -	Install useful CLI tools and plugins
 -	Set up oh-my-zsh, powerlevel10k, and custom configurations
+- Configure git global environments from user's data
 -	Install Nerd Fonts for terminal icons
 
 ### 3. Set up fonts
