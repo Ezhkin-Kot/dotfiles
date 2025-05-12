@@ -1,0 +1,7 @@
+[user]
+	name = Ezhkin-Kot
+	email = ezkot.tokze@gmail.com
+[core]
+	editor = nvim
+[color]
+	ui = auto
