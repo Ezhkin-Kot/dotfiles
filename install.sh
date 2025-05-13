@@ -80,7 +80,7 @@ echo "Current Git config:"
 git --no-pager config --global --list
 
 # Install JetBrains Mono Nerd font
-printCat "$color3" "Nerd font is required for this config. I will install the best for you."
+printCat "$color3" "Nerd font is required. I will install the best for you."
 cp -r fonts/* ~/Library/Fonts
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
