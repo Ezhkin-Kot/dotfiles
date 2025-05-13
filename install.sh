@@ -41,6 +41,9 @@ echo "   ${color5}––––––––––––––––––––�
 # Install oh-my-zsh
 printCat "$color1" "Now I will install zsh plugin manager"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install packages
@@ -51,12 +54,13 @@ echo "   ${color5}––––––––––––––––––––�
 
 # Rewrite configs
 printCat "$color1" "I need to change your .zshrc config. This may request your password again."
-sudo cat .zshrc > ~/.zshrc
+cp .zshrc ~/.zshrc
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 printCat "$color1" "And some other configs"
-sudo cp -r bat ~/.config/
-sudo cp -r .fzf-git.sh ~/
+mkdir -p ~/.config
+cp -r bat ~/.config/
+cp .fzf-git.sh ~/
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Configure Git
@@ -76,7 +80,7 @@ git config --global --list
 
 # Install JetBrains Mono Nerd font
 printCat "$color3" "Nerd font is required for this config. I will install the best for you."
-sudo cp -r fonts/* ~/Library/Fonts
+cp -r fonts/* ~/Library/Fonts
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
