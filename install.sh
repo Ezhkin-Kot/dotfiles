@@ -84,3 +84,4 @@ cp -r fonts/* ~/Library/Fonts
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
+open /Applications/iTerm.app
