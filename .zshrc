@@ -63,8 +63,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-export PATH=$PATH:/Users/ezhkinkot/.local/bin
-export PATH="/Users/ezhkinkot/.local/bin:$PATH"
+export PATH="${HOME}/.local/bin:$PATH"
 
 # === dotnet ===
 
