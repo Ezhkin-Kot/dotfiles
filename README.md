@@ -1,6 +1,6 @@
 # ZSH Config by Ezhkin-Kot
 
-It's my own ZSH configuration for MacOS and the script for automatic installation of all these configurations, tools and dotfiles in your system. It was created for quickly setting up the system with one command. You should change some paths in .zshrc according to your system user name. 
+It's my own ZSH configuration for MacOS and the script for automatic installation of all these configurations, tools and dotfiles in your system. It was created for quickly setting up the system with one command. 
 
 ## Installation
 
@@ -40,7 +40,7 @@ source ~/.zshrc
 - iTerm - a full featured terminal emulation program for MacOS.
 - `oh-my-zsh` – framework for managing Zsh configuration.
 - `zsh-autosuggestions` – suggests commands as you type, based on your history.
--	`zsh-syntax-highlighting` – adds syntax highlighting to your Zsh command line.
+- `zsh-syntax-highlighting` – adds syntax highlighting to your Zsh command line.
 - `powerlevel10k` – a beautiful zsh theme configurator.
 - `bat` – a `cat` clone with syntax highlighting and Git integration.
 - `eza` – a modern replacement for `ls` with more features and better formatting.
@@ -64,7 +64,7 @@ Fonts
 
 ## NeoVim
 
-After all you also can install my NeoVim config:
+After all you also can install this NeoVim config:
 https://github.com/Ezhkin-Kot/nvim
 
 ## Troubleshooting
