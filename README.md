@@ -27,7 +27,7 @@ The script will:
 
 ### 3. Set up fonts
 
-Set up JetBrains Mono Nerd font in your terminal preferences.
+Set up JetBrains Mono Nerd font in iTerm preferences.
 
 ### 4. Restart your ZSH
 
