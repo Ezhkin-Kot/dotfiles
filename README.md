@@ -63,3 +63,10 @@ Fonts
 
 After all you also can install my NeoVim config:
 https://github.com/Ezhkin-Kot/nvim
+
+## Troubleshooting
+
+If this zshrc config works incorrect, you can restore your old config from `.zshrc-backup` using the following command:
+```sh
+cp ~/.zshrc-backup ~/.zshrc
+```

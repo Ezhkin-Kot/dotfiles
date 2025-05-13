@@ -53,7 +53,8 @@ brew install bat eza fd fzf gcc neovim obfs4proxy openssl@3 ripgrep thefuck tldr
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Rewrite configs
-printCat "$color1" "I need to change your .zshrc config. This may request your password again."
+printCat "$color1" "I need to change your .zshrc config."
+cp ~/.zshrc ~/.zshrc-backup
 cp .zshrc ~/.zshrc
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
