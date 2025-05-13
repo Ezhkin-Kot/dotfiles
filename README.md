@@ -18,20 +18,23 @@ chmod +x ./install.sh
 ```
 
 The script will:
--	Install Homebrew if it’s not already installed
+- Install Homebrew if it’s not already installed
 - Install iTerm2 terminal emulator
--	Install useful CLI tools and plugins
--	Set up oh-my-zsh, powerlevel10k, and custom configurations
+- Install useful CLI tools and plugins
+- Set up oh-my-zsh, powerlevel10k, and custom configurations
 - Configure git global environments from user's data
--	Install Nerd Fonts for terminal icons
+- Install Nerd Fonts for terminal icons
 
 ### 3. Set up fonts
 
 Set up JetBrains Mono Nerd font in your terminal preferences.
 
-### 4. Restart your terminal
+### 4. Restart your ZSH
 
-After installation is complete, restart your terminal to apply all changes.
+After the installation is completed and the terminal opens, restart your shell with command:
+```sh
+source ~/.zshrc
+```
 
 ## Installed Packages
 - iTerm - a full featured terminal emulation program for MacOS.
