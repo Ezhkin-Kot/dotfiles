@@ -76,7 +76,7 @@ git config --global color.ui "auto"
 echo ""
 echo "${color2} Git has been configured successfully!"
 echo "Current Git config:"
-git config --global --list
+git --no-pager config --global --list
 
 # Install JetBrains Mono Nerd font
 printCat "$color3" "Nerd font is required for this config. I will install the best for you."
