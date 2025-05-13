@@ -60,7 +60,7 @@ echo "   ${color5}––––––––––––––––––––�
 printCat "$color1" "And some other configs"
 mkdir -p ~/.config
 cp -r bat ~/.config/bat
-cp .fzf-git.sh ~/
+cp .fzf-git.sh ~/fzf-git.sh
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Configure Git
