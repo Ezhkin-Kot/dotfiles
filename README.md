@@ -66,7 +66,7 @@ https://github.com/Ezhkin-Kot/nvim
 
 ## Troubleshooting
 
-If this zshrc config works incorrect, you can restore your old config from `.zshrc-backup` using the following command:
+If this zshrc config works incorrectly, you can restore your old config from `.zshrc-backup` using the following command:
 ```sh
 cp ~/.zshrc-backup ~/.zshrc
 ```
