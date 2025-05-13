@@ -56,13 +56,13 @@ echo "   ${color5}––––––––––––––––––––�
 printCat "$color1" "I need to change your .zshrc config."
 cp ~/.zshrc ~/.zshrc-backup
 cp .zshrc ~/.zshrc
-echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+echo ""
 
 printCat "$color1" "And some other configs"
 mkdir -p ~/.config
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
-echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+echo ""
 
 # Configure Git
 printCat "$color1" "Now let's configure Git for your global environment" 
@@ -82,7 +82,7 @@ git --no-pager config --global --list
 # Install JetBrains Mono Nerd font
 printCat "$color3" "Nerd font is required. I will install the best for you."
 cp -r fonts/* ~/Library/Fonts
-echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+echo ""
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
 open /Applications/iTerm.app
