@@ -139,3 +139,9 @@ alias cd="z"
 # === TheFuck ===
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+
+unalias nvim 2>/dev/null
+alias n="nvim"
+alias ga="git add"
+alias gc="git commit"
+alias gst="git status"
