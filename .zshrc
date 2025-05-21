@@ -63,12 +63,8 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-export PATH="${HOME}/.local/bin:$PATH"
-
-# === dotnet ===
-
-export DOTNET_ROOT=/usr/local/share/dotnet
-export PATH=$PATH:$DOTNET_ROOT
+export PATH=$PATH:/Users/ezhkinkot/.local/bin
+export PATH="/Users/ezhkinkot/.local/bin:$PATH"
 
 # === FZF ===
 eval "$(fzf --zsh)"
@@ -82,7 +78,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="Finds anything)" --border-label-pos="0" --preview-window="border-rounded"
   --prompt="❯ " --marker=" " --pointer="󰜴 " --separator="─"
   --scrollbar="│" --layout="reverse" --info="right"'
-
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -126,8 +121,23 @@ _fzf_comprun() {
   esac
 }
 
+# === Git aliases ===
+alias ga="git add"
+alias gc="git commit -m"
+alias gca="git commit --amend -m"
+alias gst="git status"
+alias gpull="git pull"
+alias gpush="git push"
+alias gswitch="git switch"
+alias gbranch="git branch"
+alias glog="git log --oneline"
+alias ГООЛ="
+echo ГОООООООООООООООООООООООООООООООЛ
+git"
+
 # === Eza ===
 alias ls="eza --icons=always"
+alias lsta="eza --icons=always --tree"
 
 # === Bat ===
 export BAT_THEME="Catppuccin Mocha"
@@ -140,8 +150,17 @@ alias cd="z"
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
+# === Nvim ===
 unalias nvim 2>/dev/null
 alias n="nvim"
-alias ga="git add"
-alias gc="git commit"
-alias gst="git status"
+
+# === Dotnet ===
+export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$PATH:$DOTNET_ROOT
+alias db="dotnet build"
+alias dr="dotnet run"
+
+# === Go ===
+alias gob="go build"
+alias gor="go run"
+
