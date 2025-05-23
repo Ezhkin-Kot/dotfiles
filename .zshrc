@@ -121,6 +121,14 @@ _fzf_comprun() {
   esac
 }
 
+# === Nvim ===
+unalias nvim 2>/dev/null
+alias n="nvim"
+
+# === Homebrew ===
+alias bi="brew install"
+alias bun="brew uninstall"
+
 # === Git aliases ===
 alias gs="git status"
 alias ga="git add"
@@ -136,43 +144,38 @@ alias ГООЛ="
 echo ГОООООООООООООООООООООООООООООООЛ
 git"
 
-# === Homebrew ===
-alias bi="brew install"
-alias bun="brew uninstall"
-
-# === gcc ===
-alias g++="g++-14"
-
 # === Eza ===
 alias ls="eza --icons=always"
 alias lsa="eza --icons=always -a"
 alias lst="eza --icons=always --tree"
 alias lstl="eza --icons=always --tree --level"
 
-# === Bat ===
-export BAT_THEME="Catppuccin Mocha"
-
 # === Zoxide ===
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+# === Bat ===
+export BAT_THEME="Catppuccin Mocha"
+
+# === Zellij ===
+alias zel="zellij"
 
 # === TheFuck ===
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
-# === Nvim ===
-unalias nvim 2>/dev/null
-alias n="nvim"
+# === gcc ===
+alias g++="g++-14"
+
+# === Go ===
+alias gob="go build"
+alias gor="go run"
 
 # === Dotnet ===
 export DOTNET_ROOT=/usr/local/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT
 alias db="dotnet build"
 alias dr="dotnet run"
-
-# === Go ===
-alias gob="go build"
-alias gor="go run"
 
 # === Docker ===
 alias docup="docker-compose up"
@@ -183,9 +186,6 @@ alias docdown="docker-compose down"
 alias docst="docker start"
 alias docsp="docker stop"
 
-# === Zellij ===
-alias zel="zellij"
-
-# === Edit this ===
+# === Edit this config ===
 alias nzsh="nvim ~/.zshrc"
 alias rzsh="source ~/.zshrc"
