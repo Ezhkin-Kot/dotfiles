@@ -122,22 +122,32 @@ _fzf_comprun() {
 }
 
 # === Git aliases ===
+alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
 alias gca="git commit --amend -m"
-alias gst="git status"
+alias glog="git log --oneline"
 alias gpull="git pull"
 alias gpush="git push"
 alias gswitch="git switch"
 alias gbranch="git branch"
-alias glog="git log --oneline"
+alias gpset="git push --set-upstream origin"
 alias ГООЛ="
 echo ГОООООООООООООООООООООООООООООООЛ
 git"
 
+# === Homebrew ===
+alias bi="brew install"
+alias bun="brew uninstall"
+
+# === gcc ===
+alias g++="g++-14"
+
 # === Eza ===
 alias ls="eza --icons=always"
-alias lsta="eza --icons=always --tree"
+alias lsa="eza --icons=always -a"
+alias lst="eza --icons=always --tree"
+alias lstl="eza --icons=always --tree --level"
 
 # === Bat ===
 export BAT_THEME="Catppuccin Mocha"
@@ -164,3 +174,18 @@ alias dr="dotnet run"
 alias gob="go build"
 alias gor="go run"
 
+# === Docker ===
+alias docup="docker-compose up"
+alias docupb="docker-compose up --build"
+alias docupn="docker-compose up --no-start"
+alias docupbn="docker-compose up --build --no-start"
+alias docdown="docker-compose down"
+alias docst="docker start"
+alias docsp="docker stop"
+
+# === Zellij ===
+alias zel="zellij"
+
+# === Edit this ===
+alias nzsh="nvim ~/.zshrc"
+alias rzsh="source ~/.zshrc"
