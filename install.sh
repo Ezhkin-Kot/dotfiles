@@ -48,6 +48,7 @@ echo "   ${color5}––––––––––––––––––––�
 
 # Install packages
 printCat "$color3" "And I will install some useful packages"
+brew install --cask ghostty
 brew install --cask iterm2
 brew install bat eza fd fzf gcc neovim obfs4proxy openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
@@ -62,6 +63,7 @@ printCat "$color1" "And some other configs"
 mkdir -p ~/.config
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
+cp -r ghostty ~/.config/ghostty
 echo ""
 
 # Configure Git
