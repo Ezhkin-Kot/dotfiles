@@ -19,11 +19,11 @@ chmod +x ./install.sh
 
 The script will:
 - Install Homebrew if it’s not already installed
-- Install iTerm2 terminal emulator
+- Install Ghostty and iTerm2 terminal emulators
 - Install useful CLI tools and plugins
 - Set up oh-my-zsh, powerlevel10k, and custom configurations
 - Configure git global environments from user's data
-- Install Nerd Fonts for terminal icons
+- Install original and Nerd JetBrains Mono fonts
 
 ### 3. Set up fonts
 
@@ -37,8 +37,10 @@ source ~/.zshrc
 ```
 
 ## Installed Packages
+- Ghostty - the best terminal emulator in my opinion.
 - iTerm - a full featured terminal emulation program for MacOS.
 - `oh-my-zsh` – framework for managing Zsh configuration.
+- `zsh-vi-mode` - adds vim motions to your Zsh command line.
 - `zsh-autosuggestions` – suggests commands as you type, based on your history.
 - `zsh-syntax-highlighting` – adds syntax highlighting to your Zsh command line.
 - `powerlevel10k` – a beautiful zsh theme configurator.
@@ -59,8 +61,9 @@ source ~/.zshrc
 - `zellij` – a terminal workspace and multiplexer, alternative to `tmux`, but does not require configuration.
 - `zoxide` – a smarter `cd` command that remembers your most-used directories.
 
-Fonts
-- JetBrains Mono Nerd Font (included in fonts/)
+Fonts (included in fonts/)
+- JetBrains Mono
+- JetBrainsMono Nerd Font
 
 ## NeoVim
 
