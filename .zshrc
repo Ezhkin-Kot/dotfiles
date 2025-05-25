@@ -124,6 +124,7 @@ _fzf_comprun() {
 # === Nvim ===
 unalias nvim 2>/dev/null
 alias n="nvim"
+alias nvconf="cd ~/.config/nvim && nvim && cd -"
 
 # === Homebrew ===
 alias bi="brew install"
