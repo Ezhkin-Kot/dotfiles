@@ -89,4 +89,4 @@ cp -r fonts/* ~/Library/Fonts
 echo ""
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
-open /Applications/iTerm.app
+open /Applications/Ghostty.app
