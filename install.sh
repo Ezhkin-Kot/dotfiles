@@ -76,6 +76,7 @@ git config --global user.name "$git_username"
 git config --global user.email "$git_email"
 git config --global core.editor "nvim"
 git config --global color.ui "auto"
+git config --global core.quotepath off
 
 echo ""
 echo "${color2} Git has been configured successfully!"
