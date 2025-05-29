@@ -62,6 +62,7 @@ echo ""
 
 printCat "$color1" "And some other configs"
 mkdir -p ~/.config
+cp .p10k.zsh ~/.p10k.zsh
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
 cp -r ghostty ~/.config/ghostty
