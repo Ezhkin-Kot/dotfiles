@@ -67,6 +67,7 @@ cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
 cp -r ghostty ~/.config/ghostty
 cp -r yazi ~/.config/yazi
+cp -r zellij ~/.config/zellij
 echo ""
 
 # Configure Git
