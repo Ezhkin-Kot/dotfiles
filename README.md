@@ -38,18 +38,21 @@ source ~/.zshrc
 
 ## Installed Packages
 - Ghostty - the best terminal emulator in my opinion.
-- iTerm - a full featured terminal emulation program for MacOS.
+- iTerm - another terminal emulator for MacOS only.
 - `oh-my-zsh` – framework for managing Zsh configuration.
-- `zsh-vi-mode` - adds vim motions to your Zsh command line.
-- `zsh-autosuggestions` – suggests commands as you type, based on your history.
-- `zsh-syntax-highlighting` – adds syntax highlighting to your Zsh command line.
+    - `zsh-vi-mode` - adds vim motions to your Zsh command line.
+    - `zsh-autosuggestions` – suggests commands as you type, based on your history.
+    - `zsh-syntax-highlighting` – adds syntax highlighting to your Zsh command line.
 - `powerlevel10k` – a beautiful zsh theme configurator.
+- `neovim` – the best code editor in the world. 
+- `yazi` - a full-featured file manager in your terminal. 
+- `zellij` – a terminal workspace and multiplexer, alternative to `tmux`, but does not require configuration.
+- `zoxide` – a smarter `cd` command that remembers your most-used directories.
 - `bat` – a `cat` clone with syntax highlighting and Git integration.
 - `eza` – a modern replacement for `ls` with more features and better formatting.
 - `fd` – a simple, fast alternative to `find`.
 - `fzf` – a general-purpose command-line fuzzy finder.
 - `gcc` – the GNU Compiler Collection for compiling C/C++ and other languages.
-- `neovim` – a modernized and more extensible version of Vim.
 - `obfs4proxy` – a pluggable transport proxy for Tor.
 - `openssl` – toolkit for TLS/SSL and cryptographic functions.
 - `ripgrep` – a fast search tool like `grep`, optimized for large codebases.
@@ -58,8 +61,6 @@ source ~/.zshrc
 - `tmux` – a terminal multiplexer that lets you switch between sessions in one terminal window.
 - `tor` – a tool for anonymous communication over the internet.
 - `wget` – a command-line utility for downloading files from the web.
-- `zellij` – a terminal workspace and multiplexer, alternative to `tmux`, but does not require configuration.
-- `zoxide` – a smarter `cd` command that remembers your most-used directories.
 
 Fonts (included in fonts/)
 - JetBrains Mono
