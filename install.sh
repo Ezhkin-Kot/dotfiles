@@ -66,6 +66,7 @@ cp .p10k.zsh ~/.p10k.zsh
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
 cp -r ghostty ~/.config/ghostty
+cp -r yazi ~/.config/yazi
 echo ""
 
 # Configure Git
