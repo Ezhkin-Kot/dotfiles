@@ -27,6 +27,13 @@ echo "             ${color1}/               ${color2}/               ${color3}/"
 echo "         ${color1}/ᐠ｡ꞈ｡ᐟ\\         ${color2}/ᐠ｡ꞈ｡ᐟ\\         ${color3}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
+echo "${color3} Let's start the configuration? ${defaultColor}"
+read -p "Press [Enter] to continue or [Ctrl+C] to cancel: "
+if [ $? -ne 0 ]; then
+  echo "Configuration canceled."
+  exit 1
+fi
+
 printCat "$color2" "Please, give me your sudo password"
 sudo -v
 
