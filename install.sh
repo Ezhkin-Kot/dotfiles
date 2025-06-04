@@ -98,5 +98,14 @@ printCat "$color3" "Nerd font is required. I will install the best for you."
 cp -r fonts/* ~/Library/Fonts
 echo ""
 
+# Install Neovim config
+printCat "$color3" "Do you want to install Neovim config? [y/n]"
+read -r install_neovim
+if [ "$install_neovim" = "y" ]; then
+  git clone git@github.com:Ezhkin-Kot/nvim.git ~/.config/nvim
+  echo "${color3} Neovim has been installed successfully!"
+  echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+fi
+
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
 open /Applications/Ghostty.app
