@@ -204,6 +204,12 @@ alias docdown="docker-compose down"
 alias docst="docker start"
 alias docsp="docker stop"
 
+# === Tailscale ===
+alias tsup="tailscale up"
+alias tsd="tailscale down"
+alias tss="tailscale status"
+alias tsip="tailscale ip"
+
 # === Edit this config ===
 alias nzsh="nvim ~/.zshrc"
 alias rzsh="
