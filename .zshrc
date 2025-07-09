@@ -206,4 +206,6 @@ alias docsp="docker stop"
 
 # === Edit this config ===
 alias nzsh="nvim ~/.zshrc"
-alias rzsh="source ~/.zshrc"
+alias rzsh="
+source ~/.zshrc
+zsh"
