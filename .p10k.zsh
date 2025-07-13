@@ -1776,7 +1776,7 @@
   function prompt_mock() {
     BATTERY=$(pmset -g batt | grep -Eo "\d+%")
     if [ "$BATTERY" = "100%" ]; then
-      p10k segment -b '#bfc6d4' -f '#282737' -t '󰆍'
+      p10k segment -b '#bfc6d4' -f '#282737' -t '󰆍 '
     else
       p10k segment -b '#bfc6d4' -f '#282737' -t '󰆍  '
     fi
