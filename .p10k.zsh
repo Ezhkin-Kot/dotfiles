@@ -114,7 +114,8 @@
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     battery                 # internal battery
     # wifi                  # wifi speed
-    example               # example user-defined segment (see prompt_example function below)
+    # example               # example user-defined segment (see prompt_example function below)
+    mock
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -1769,7 +1770,16 @@
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
-    p10k segment -b 7 -f 0 -t '󰆍  '
+    p10k segment -f 208 -i '⭐' -t 'hello, %n'
+  }
+
+  function prompt_mock() {
+    BATTERY=$(pmset -g batt | grep -Eo "\d+%")
+    if [ "$BATTERY" = "100%" ]; then
+      p10k segment -b '#bfc6d4' -f '#282737' -t '󰆍'
+    else
+      p10k segment -b '#bfc6d4' -f '#282737' -t '󰆍  '
+    fi
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
