@@ -1,4 +1,4 @@
-# ZSH Config by Ezhkin-Kot
+# ZSH Config and Dotfiles by Ezhkin-Kot
 
 It's my own ZSH configuration for MacOS and the script for automatic installation of all these configurations, tools and dotfiles in your system. It was created for quickly setting up the system with one command. 
 
@@ -7,8 +7,8 @@ It's my own ZSH configuration for MacOS and the script for automatic installatio
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/Ezhkin-Kot/zsh-config.git
-cd zsh-config
+git clone https://github.com/Ezhkin-Kot/dotfiles.git
+cd dotfiles
 ```
 
 ### 2. Run the install script
