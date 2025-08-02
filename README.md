@@ -19,15 +19,11 @@ chmod +x ./install.sh
 
 The script will:
 - Install Homebrew if it’s not already installed
-- Install Ghostty and iTerm2 terminal emulators
+- Install Ghostty terminal emulator
 - Install useful CLI tools and plugins
 - Set up oh-my-zsh, powerlevel10k, and custom configurations
 - Configure git global environments from user's data
 - Install original and Nerd JetBrains Mono fonts
-
-### 3. Set up fonts
-
-Set up JetBrains Mono Nerd font in iTerm preferences.
 
 ### 4. Restart your ZSH
 
@@ -35,10 +31,10 @@ After the installation is completed and the terminal opens, restart your shell w
 ```sh
 source ~/.zshrc
 ```
+Later you can restart it with `rzsh` alias
 
 ## Installed Packages
 - Ghostty - the best terminal emulator in my opinion.
-- iTerm - another terminal emulator for MacOS only.
 - `oh-my-zsh` – framework for managing Zsh configuration.
     - `zsh-vi-mode` - adds vim motions to your Zsh command line.
     - `zsh-autosuggestions` – suggests commands as you type, based on your history.
