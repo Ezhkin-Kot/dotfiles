@@ -16,13 +16,13 @@ printCat() {
 
 # Install zsh
 printCat "$color3" "Let's change your default shell to zsh"
-sudo pacman -S zsh
+sudo pacman -S zsh --noconfirm
 chsh -s /bin/zsh
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install packages
 printCat "$color3" "And I will install some useful packages"
-sudo pacman -S ghostty kitty zen-browser telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim obfs4proxy wireguard-tools openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k sl 
+sudo pacman -S --noconfirm ghostty kitty zen-browser telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim obfs4proxy wireguard-tools openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k sl
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install JetBrains Mono Nerd font
