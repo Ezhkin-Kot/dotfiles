@@ -85,7 +85,12 @@ mkdir -p ~/.config
 cp .p10k.zsh ~/.p10k.zsh
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
-cp -r ghostty ~/.config/ghostty
+mkdir -p ~/.config/ghostty
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  cp -r ./ghostty/macos-config ~/.config/ghostty/config
+else
+  cp -r ./ghostty/arch-config ~/.config/ghostty/config
+fi
 cp -r yazi ~/.config/yazi
 cp -r zellij ~/.config/zellij
 echo ""
