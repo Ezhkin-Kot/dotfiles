@@ -105,3 +105,8 @@ if [ "$install_neovim" = "y" ]; then
 fi
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  open /Applications/Ghostty.app
+else
+  ghostty
+fi
