@@ -86,22 +86,25 @@ cp -r zellij ~/.config/zellij
 echo ""
 
 # Configure Git
-printCat "$color1" "Now let's configure Git for your global environment" 
-read -p "Enter your Git user name: " git_username
-read -p "Enter your Git email: " git_email
+printCat "$color1" "Do you want to configure Git for your global environment? [y/n]"
+read -r is_git_config
+if [ "$is_git_config" == "y" ]; then
+  read -p "Enter your Git user name: " git_username
+  read -p "Enter your Git email: " git_email
 
-git config --global user.name "$git_username"
-git config --global user.email "$git_email"
-git config --global core.editor "nvim"
-git config --global color.ui "auto"
-git config --global core.quotepath off
-git config --global push.autoSetupRemote true
-git config --global pull.rebase true
+  git config --global user.name "$git_username"
+  git config --global user.email "$git_email"
+  git config --global core.editor "nvim"
+  git config --global color.ui "auto"
+  git config --global core.quotepath off
+  git config --global push.autoSetupRemote true
+  git config --global pull.rebase true
 
-echo ""
-cpEcho "${color2} Git has been configured successfully!"
-cpEcho "Current Git config:"
-git --no-pager config --global --list
+  echo ""
+  cpEcho "${color2} Git has been configured successfully!"
+  cpEcho "Current Git config:"
+  git --no-pager config --global --list
+fi
 
 # Install Neovim config
 printCat "$color3" "Do you want to install Neovim config? [y/n]"
