@@ -19,7 +19,11 @@ printCat() {
 
   cpEcho "             ${color}${message}"
   cpEcho "             ${color}/"
-  cpEcho "         ${color}/ᐠoꞈoᐟ\\ ${defaultColor}"
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "         ${color}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
+  else
+    echo -e "         ${color}/^•˕•^\\ ${defaultColor}"
+  fi
 }
 
 if [ "$EUID" -eq 0 ]; then
@@ -32,7 +36,11 @@ cpEcho "Oh, what a boring terminal you have! Don't worry, now we will fix it."
 echo ""
 cpEcho "             ${color1}Meow            ${color2}Meow            ${color3}Meow"
 cpEcho "             ${color1}/               ${color2}/               ${color3}/"
-cpEcho "         ${color1}/ᐠoꞈoᐟ\\         ${color2}/ᐠoꞈoᐟ\\         ${color3}/ᐠoꞈoᐟ\\ ${defaultColor}"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "         ${color1}/ᐠ｡ꞈ｡ᐟ\\         ${color2}/ᐠ｡ꞈ｡ᐟ\\         ${color3}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
+else
+  echo -e "         ${color1}/^•˕•^\\         ${color2}/^•˕•^\\         ${color3}/^•˕•^\\ ${defaultColor}"
+fi
 cpEcho "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 cpEcho "${color3} Let's start the configuration? ${defaultColor}"
