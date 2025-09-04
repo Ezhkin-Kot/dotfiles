@@ -35,6 +35,5 @@ echo -e "   ${color5}–––––––––––––––––––�
 
 # Install JetBrains Mono Nerd font
 printCat "$color3" "Nerd font is required. I will install the best for you."
-sudo mkdir -p /usr/share/fonts/TTF
-sudo cp -r fonts/* /usr/share/fonts/TTF
+yay -S --noconfirm ttf-jetbrains-mono-nerd
 echo ""
