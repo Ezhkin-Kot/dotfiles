@@ -11,7 +11,7 @@ printCat() {
 
   echo "             ${color}${message}"
   echo "             ${color}/"
-  echo "         ${color}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
+  echo "         ${color}/ᐠoꞈoᐟ\\ ${defaultColor}"
 }
 
 # Install Homebrew and add it to the PATH

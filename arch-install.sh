@@ -11,7 +11,7 @@ printCat() {
 
   echo -e "             ${color}${message}"
   echo -e "             ${color}/"
-  echo -e "         ${color}/ᐠ｡ꞈ｡ᐟ\\ ${defaultColor}"
+  echo -e "         ${color}/ᐠoꞈoᐟ\\ ${defaultColor}"
 }
 
 # Install zsh
