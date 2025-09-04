@@ -20,9 +20,18 @@ sudo pacman -S zsh --noconfirm
 chsh -s /bin/zsh
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
-# Install packages
 printCat "$color3" "And I will install some useful packages"
-sudo pacman -S --noconfirm ghostty kitty zen-browser telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim obfs4proxy wireguard-tools openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k sl
+# Install yay
+echo "Installing yay package manager"
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+# Install p10k
+printCat "$color3" "I will install powerlevel10k"
+yay -S --noconfirm zsh-theme-powerlevel10k-git
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+# Install packages
+sudo pacman -S --noconfirm ghostty kitty zen-browser telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim obfs4proxy wireguard-tools openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide sl
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install JetBrains Mono Nerd font
