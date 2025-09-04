@@ -35,5 +35,5 @@ echo -e "   ${color5}–––––––––––––––––––�
 
 # Install JetBrains Mono Nerd font
 printCat "$color3" "Nerd font is required. I will install the best for you."
-yay -S --noconfirm ttf-jetbrains-mono-nerd
+yay -S --noconfirm ttf-jetbrains-mono-nerd ttf-jetbrains-mono
 echo ""
