@@ -45,13 +45,11 @@ fi
 printCat "$color2" "Please, give me your sudo password"
 sudo -v
 
-# Install Homebrew and add it to the PATH
-printCat "$color3" "Let's install package manager"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-cpEcho >> ~/.zprofile
-cpEcho 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-cpEcho "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  ./macos-install.sh
+else
+  ./arch-install.sh
+fi
 
 # Install oh-my-zsh
 printCat "$color1" "Now I will install zsh plugin manager"
@@ -61,12 +59,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/
 git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 git clone https://github.com/zsh-users/zsh-completions.git $ZSH_CUSTOM/plugins/zsh-completions
 git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
-cpEcho "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
-
-# Install packages
-printCat "$color3" "And I will install some useful packages"
-brew install --cask ghostty
-brew install bat eza fd fzf gcc neovim obfs4proxy openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k sl
 cpEcho "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Rewrite configs
@@ -103,11 +95,6 @@ cpEcho "${color2} Git has been configured successfully!"
 cpEcho "Current Git config:"
 git --no-pager config --global --list
 
-# Install JetBrains Mono Nerd font
-printCat "$color3" "Nerd font is required. I will install the best for you."
-cp -r fonts/* ~/Library/Fonts
-echo ""
-
 # Install Neovim config
 printCat "$color3" "Do you want to install Neovim config? [y/n]"
 read -r install_neovim
@@ -118,4 +105,3 @@ if [ "$install_neovim" = "y" ]; then
 fi
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
-open /Applications/Ghostty.app
