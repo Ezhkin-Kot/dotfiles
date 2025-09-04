@@ -99,7 +99,13 @@ git --no-pager config --global --list
 printCat "$color3" "Do you want to install Neovim config? [y/n]"
 read -r install_neovim
 if [ "$install_neovim" = "y" ]; then
-  git clone git@github.com:Ezhkin-Kot/nvim.git ~/.config/nvim
+  echo "Do you have a configured SSH-key in GitHub? [y/n]"
+  read -r is_ssh_key
+  if [ "$is_ssh_key" = "y" ]; then
+    git clone git@github.com:Ezhkin-Kot/nvim.git ~/.config/nvim
+  else
+    git clone https://github.com/Ezhkin-Kot/nvim.git ~/.config/nvim
+  fi
   cpEcho "${color3} Neovim has been installed successfully!"
   cpEcho "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 fi
