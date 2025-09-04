@@ -26,7 +26,6 @@ echo "   ${color5}––––––––––––––––––––�
 printCat "$color3" "And I will install some useful packages"
 brew install --cask ghostty
 brew install bat yazi eza fd fzf gcc neovim obfs4proxy wireguard-tools openssl@3 ripgrep thefuck tldr tmux tor wget zellij zoxide powerlevel10k sl
-echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 echo "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install JetBrains Mono Nerd font

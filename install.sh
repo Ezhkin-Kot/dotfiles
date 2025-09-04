@@ -73,6 +73,11 @@ cpEcho "   ${color5}––––––––––––––––––––
 printCat "$color1" "I need to change your .zshrc config."
 cp ~/.zshrc ~/.zshrc-backup
 cp .zshrc ~/.zshrc
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+else
+  echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+fi
 echo ""
 
 printCat "$color1" "And some other configs"

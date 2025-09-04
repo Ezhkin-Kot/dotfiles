@@ -29,7 +29,6 @@ makepkg -si
 # Install p10k
 printCat "$color3" "I will install powerlevel10k"
 yay -S --noconfirm zsh-theme-powerlevel10k-git zen-browser-bin
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 # Install packages
 sudo pacman -S --noconfirm kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
