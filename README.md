@@ -13,7 +13,7 @@ cd dotfiles
 
 ### 2. Run the install script
 ```sh
-chmod +x ./install.sh
+chmod +x install.sh arch-install.sh macos-install.sh
 ./install.sh
 ```
 
