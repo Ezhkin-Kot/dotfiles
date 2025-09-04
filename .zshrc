@@ -46,6 +46,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
+  export TERM='xterm-256color'
   export EDITOR='vim'
 else
   export EDITOR='nvim'
@@ -183,7 +184,7 @@ eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
 # === gcc ===
-alias g++="g++-14"
+alias g++="g++-15"
 
 # === Go ===
 alias gob="go build"
