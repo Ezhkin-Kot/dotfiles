@@ -1,0 +1,14 @@
+theme = catppuccin-mocha
+font-family = JetBrains Mono
+font-size = 10
+background-opacity = 0.6
+background-blur = true
+mouse-hide-while-typing = true
+cursor-click-to-move = true
+cursor-style = block
+cursor-style-blink = false
+cursor-text = #000000
+confirm-close-surface = false
+shell-integration-features = no-cursor
+window-padding-x = 0
+window-padding-y = 0
