@@ -144,6 +144,7 @@ alias bun="brew uninstall"
 # === Git aliases ===
 alias gs="git status"
 alias ga="git add"
+alias gust="git restore --staged"
 alias gc="git commit -m"
 alias gca="git commit --amend -m"
 alias glog="git log --graph --decorate --oneline --all"
