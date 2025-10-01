@@ -207,6 +207,17 @@ alias g++="g++-15"
 # === Go ===
 alias gob="go build"
 alias gor="go run"
+alias air='~/go/bin/air'
+
+# === Rust ===
+alias cr="cargo run"
+alias cb="cargo build"
+alias ca="cargo add"
+alias ci="cargo install"
+alias cfm="cargo fmt"
+alias cch="cargo check"
+alias ccl="cargo clippy"
+alias cinit="cargo init"
 
 # === Dotnet ===
 export DOTNET_ROOT=/usr/local/share/dotnet
