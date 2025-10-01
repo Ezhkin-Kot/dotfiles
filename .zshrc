@@ -102,6 +102,25 @@ _fzf_compgen_dir() {
 # == fzf-git ==
 source ~/.fzf-git.sh/fzf-git.sh
 
+# Set keybindings for zsh-vi-mode insert mode
+function zvm_after_init() {
+    zvm_bindkey viins "^P" up-line-or-beginning-search
+    zvm_bindkey viins "^N" down-line-or-beginning-search
+    for o in files branches tags remotes hashes stashes lreflogs each_ref; do
+        eval "zvm_bindkey viins '^f^${o[1]}' fzf-git-$o-widget"
+        eval "zvm_bindkey viins '^f${o[1]}' fzf-git-$o-widget"
+    done
+}
+# Set keybindings for zsh-vi-mode normal and visual modes
+function zvm_after_lazy_keybindings() {
+    for o in files branches tags remotes hashes stashes lreflogs each_ref; do
+        eval "zvm_bindkey vicmd '^f^${o[1]}' fzf-git-$o-widget"
+        eval "zvm_bindkey vicmd '^f${o[1]}' fzf-git-$o-widget"
+        eval "zvm_bindkey visual '^f^${o[1]}' fzf-git-$o-widget"
+        eval "zvm_bindkey visual '^f${o[1]}' fzf-git-$o-widget"
+    done
+}
+
 # == fzf preview ==
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
