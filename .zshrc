@@ -69,6 +69,7 @@ fi
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # === FZF ===
 eval "$(fzf --zsh)"
@@ -164,11 +165,12 @@ alias bun="brew uninstall"
 alias gs="git status"
 alias ga="git add"
 alias gust="git restore --staged"
+alias grest="git restore"
 alias gc="git commit -m"
 alias gca="git commit --amend -m"
 alias glog="git log --graph --decorate --oneline --all"
 alias glogd="git log --graph --decorate --all"
-alias gpull="git pull"
+alias gpul="git pull"
 alias gpush="git push"
 alias gcl="git clone"
 alias gsw="git switch"
@@ -218,6 +220,12 @@ alias cfm="cargo fmt"
 alias cch="cargo check"
 alias ccl="cargo clippy"
 alias cinit="cargo init"
+
+# === Typst ===
+alias tc="typst compile"
+alias tcm="typst compile main.typ"
+alias tw="typst watch"
+alias twm="typst watch main.typ"
 
 # === Dotnet ===
 export DOTNET_ROOT=/usr/local/share/dotnet
