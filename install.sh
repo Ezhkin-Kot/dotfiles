@@ -89,7 +89,15 @@ echo ""
 
 printCat "$color1" "And some other configs"
 mkdir -p ~/.config
-cp .p10k.zsh ~/.p10k.zsh
+
+printCat "$color1" "Is your device a laptop? [y/n]"
+read -r is_laptop
+if [ "$is_laptop" = "y" ]; then
+  cp .p10k_laptop.zsh ~/.p10k.zsh
+else
+  cp .p10k_desktop.zsh ~/.p10k.zsh
+fi
+
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
 
