@@ -34,7 +34,8 @@ cd $script_dir
 printCat "$color3" "I will install powerlevel10k"
 yay -S --noconfirm zsh-theme-powerlevel10k-git zen-browser-bin
 # Install packages
-sudo pacman -S --noconfirm kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
+printCat "$color3" "And a little more"
+sudo pacman -S --noconfirm less kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install JetBrains Mono Nerd font
