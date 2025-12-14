@@ -101,11 +101,12 @@ fi
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
 
-if [ "$WITH_GUI_INSTALL" = true ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
   mkdir -p ~/.config/ghostty
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    cp -r ./ghostty/macos-config ~/.config/ghostty/config
-  else
+  cp -r ./ghostty/macos-config ~/.config/ghostty/config
+else
+  if [ "$WITH_GUI_INSTALL" = true ]; then
+    mkdir -p ~/.config/ghostty
     cp -r ./ghostty/arch-config ~/.config/ghostty/config
   fi
 fi
@@ -151,12 +152,12 @@ if [ "$install_neovim" = "y" ]; then
 fi
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
-if [ "$WITH_GUI_INSTALL" = true ]; then
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    open /Applications/Ghostty.app
-  else
-    ghostty
-  fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  open /Applications/Ghostty.app
 else
-  exec zsh
+  if [ "$WITH_GUI_INSTALL" = true ]; then
+    ghostty
+  else
+    exec zsh
+  fi
 fi
