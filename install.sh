@@ -149,4 +149,6 @@ if [ "$WITH_GUI_INSTALL" = true ]; then
   else
     ghostty
   fi
+else
+  exec zsh
 fi
