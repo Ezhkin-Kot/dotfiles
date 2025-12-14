@@ -5,6 +5,8 @@ color4="\033[1;33m"
 color5="\033[1;35m"
 defaultColor="\033[0m"
 
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 printCat() {
   local color="$1"
   local message="${2:-Meow}"
@@ -23,9 +25,11 @@ echo -e "   ${color5}–––––––––––––––––––�
 printCat "$color3" "And I will install some useful packages"
 # Install yay
 echo "Installing yay package manager"
-git clone https://aur.archlinux.org/yay.git
-cd yay
+sudo pacman -S --needed base-devel --noconfirm
+git clone https://aur.archlinux.org/yay.git ~/yay
+cd ~/yay
 makepkg -si
+cd $script_dir
 # Install p10k
 printCat "$color3" "I will install powerlevel10k"
 yay -S --noconfirm zsh-theme-powerlevel10k-git zen-browser-bin
