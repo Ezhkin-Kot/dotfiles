@@ -5,7 +5,7 @@ color4="\033[1;33m"
 color5="\033[1;35m"
 defaultColor="\033[0m"
 
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 printCat() {
   local color="$1"
@@ -34,8 +34,12 @@ cd $script_dir
 printCat "$color3" "I will install powerlevel10k"
 yay -S --noconfirm zsh-theme-powerlevel10k-git zen-browser-bin
 # Install packages
-printCat "$color3" "And a little more"
-sudo pacman -S --noconfirm less kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
+
+if [ "$WITH_GUI_INSTALL" = true ]; then
+  sudo pacman -S --noconfirm less kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
+else
+  sudo pacman -S --noconfirm less yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
+fi
 echo -e "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Install JetBrains Mono Nerd font

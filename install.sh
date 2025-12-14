@@ -56,6 +56,13 @@ sudo -v
 if [[ "$OSTYPE" == "darwin"* ]]; then
   ./macos-install.sh
 else
+  printCat "$color3" "Are you planning to use GUI? [y/n]"
+  read -r is_gui
+  if [ "$is_gui" = "y" ]; then
+    export WITH_GUI_INSTALL=true
+  else
+    export WITH_GUI_INSTALL=false
+  fi
   ./arch-install.sh
 fi
 
@@ -85,12 +92,16 @@ mkdir -p ~/.config
 cp .p10k.zsh ~/.p10k.zsh
 cp -r bat ~/.config/bat
 cp -r .fzf-git.sh ~/.fzf-git.sh
-mkdir -p ~/.config/ghostty
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  cp -r ./ghostty/macos-config ~/.config/ghostty/config
-else
-  cp -r ./ghostty/arch-config ~/.config/ghostty/config
+
+if [ "$WITH_GUI_INSTALL" = true ]; then
+  mkdir -p ~/.config/ghostty
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    cp -r ./ghostty/macos-config ~/.config/ghostty/config
+  else
+    cp -r ./ghostty/arch-config ~/.config/ghostty/config
+  fi
 fi
+
 cp -r yazi ~/.config/yazi
 cp -r zellij ~/.config/zellij
 echo ""
@@ -132,8 +143,10 @@ if [ "$install_neovim" = "y" ]; then
 fi
 
 printCat "$color2" "Congratulations! Now your terminal has become excellent!"
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  open /Applications/Ghostty.app
-else
-  ghostty
+if [ "$WITH_GUI_INSTALL" = true ]; then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    open /Applications/Ghostty.app
+  else
+    ghostty
+  fi
 fi
