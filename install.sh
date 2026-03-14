@@ -81,7 +81,7 @@ printCat "$color1" "Well, let's apply some configs to your system"
 mkdir -p ~/.config
 
 # Common config dirs:
-packages=("bat", "fzf-git", "yazi", "zellij", "zsh")
+packages=("bat" "fzf-git" "yazi" "zellij" "zsh")
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   packages+=("ghostty-macos")
