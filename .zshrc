@@ -33,7 +33,15 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode )
+plugins=(
+  git 
+  zsh-syntax-highlighting 
+  zsh-autosuggestions 
+  zsh-vi-mode 
+  web-search 
+  copyfile 
+)
+
 ZVM_VI_EDITOR=nvim
 
 # zsh completions
@@ -66,7 +74,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -179,9 +186,8 @@ alias gbr="git branch"
 alias gbrc="git checkout -b"
 alias gch="git checkout"
 alias gpset="git push --set-upstream origin"
-alias ГООЛ="
-echo ГОООООООООООООООООООООООООООООООЛ
-git"
+alias gst="git stash"
+alias gsp="git stash pop"
 
 # === Eza ===
 alias ls="eza --icons=always"
@@ -248,8 +254,63 @@ alias tsd="tailscale down"
 alias tss="tailscale status"
 alias tsip="tailscale ip"
 
+# === arduino-cli ===
+alias arc="arduino-cli"
+
+arduino_select_fqbn() {
+  local LINE
+  local CACHE="$HOME/.arduino_last_fqbn"
+
+  LINE=$(arduino-cli board listall \
+    | sed 1d \
+    | fzf --prompt="Select board: " \
+          --query="$(cat "$CACHE" 2>/dev/null)")
+
+  [ -z "$LINE" ] && return 1
+
+  echo "$LINE" | awk '{print $NF}' | tee "$CACHE"
+}
+
+arcc() {
+  local FQBN
+
+  FQBN=$(arduino_select_fqbn) || return 1
+
+  echo "Compiling for $FQBN"
+  arduino-cli compile --fqbn "$FQBN" .
+}
+
+arcu() {
+  local PORT FQBN
+
+  PORT=$(arduino-cli board list \
+    | awk 'NR>1 {print $1}' \
+    | fzf --prompt="Select port: ")
+
+  [ -z "$PORT" ] && return 1
+
+  FQBN=$(arduino_select_fqbn) || return 1
+
+  echo "Compiling for $FQBN"
+  arduino-cli compile --fqbn "$FQBN" . || return 1
+
+  echo "Uploading to $PORT"
+  arduino-cli upload -p "$PORT" --fqbn "$FQBN" .
+}
+
 # === Edit this config ===
 alias nzsh="nvim ~/.zshrc"
 alias rzsh="
 source ~/.zshrc
 zsh"
+
+# === Misc ===
+alias of="open -a Finder ."
+alias opdf="open -a Skim"
+
+# === Env ===
+source $HOME/.zsh/.env
+
+# === Reminder ===
+# Prints the content of the .tasks file to the terminal at every shell startup
+cat $HOME/.tasks
