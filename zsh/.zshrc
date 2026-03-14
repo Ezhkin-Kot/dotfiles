@@ -1,3 +1,8 @@
+# ===x=== ZSH CONFIG ===x===
+
+# Dark magic of zsh to get absolute path of dotfiles directory
+DOTFILES_DIR="${${(%):-%x}:A:h:h}"
+
 # === Powerlevel10k ===
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -71,6 +76,12 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
+elif [[ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -163,6 +174,7 @@ function y() {
 unalias nvim 2>/dev/null
 alias n="nvim"
 alias nvconf="cd ~/.config/nvim && nvim && cd -"
+alias ndot="cd ~/.config/nvim && nvim && cd -"
 
 # === Homebrew ===
 alias bi="brew install"

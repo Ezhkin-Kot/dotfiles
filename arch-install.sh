@@ -36,9 +36,9 @@ yay -S --noconfirm zsh-theme-powerlevel10k-git zen-browser-bin
 # Install packages
 
 if [ "$WITH_GUI_INSTALL" = true ]; then
-  sudo pacman -S --noconfirm zip unzip npm python3 less kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
+  sudo pacman -S --noconfirm stow zip unzip npm python3 less kitty ghostty firefox telegram-desktop zathura yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
 else
-  sudo pacman -S --noconfirm zip unzip npm python3 less yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
+  sudo pacman -S --noconfirm stow zip unzip npm python3 less yazi bat eza fd fzf gcc rustup go fastfetch neovim wireguard-tools ripgrep thefuck tldr tmux tor wget zellij zoxide sl
 fi
 # Install Rust utils
 rustup default stable

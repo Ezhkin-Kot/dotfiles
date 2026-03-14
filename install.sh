@@ -77,42 +77,34 @@ git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-m
 cpEcho "   ${color5}–––––––––––––––––––––––––––––––––––––––––––––––––––––– ${defaultColor}"
 
 # Rewrite configs
-printCat "$color1" "I need to change your .zshrc config."
-cp ~/.zshrc ~/.zshrc-backup
-cp .zshrc ~/.zshrc
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-else
-  echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-fi
-echo ""
-
-printCat "$color1" "And some other configs"
+printCat "$color1" "Well, let's apply some configs to your system"
 mkdir -p ~/.config
+
+# Common config dirs:
+packages=("bat", "fzf-git", "yazi", "zellij", "zsh")
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  packages+=("ghostty-macos")
+else
+  if [ "$WITH_GUI_INSTALL" = true ]; then
+    packages+=("ghostty-arch")
+  fi
+fi
 
 printCat "$color1" "Is your device a laptop? [y/n]"
 read -r is_laptop
 if [ "$is_laptop" = "y" ]; then
-  cp .p10k_laptop.zsh ~/.p10k.zsh
+  packages+=("p10k-laptop")
 else
-  cp .p10k_desktop.zsh ~/.p10k.zsh
+  packages+=("p10k-desktop")
 fi
 
-cp -r bat ~/.config/bat
-cp -r .fzf-git.sh ~/.fzf-git.sh
+mv ~/.zshrc ~/.zshrc-backup
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  mkdir -p ~/.config/ghostty
-  cp -r ./ghostty/macos-config ~/.config/ghostty/config
-else
-  if [ "$WITH_GUI_INSTALL" = true ]; then
-    mkdir -p ~/.config/ghostty
-    cp -r ./ghostty/arch-config ~/.config/ghostty/config
-  fi
-fi
-
-cp -r yazi ~/.config/yazi
-cp -r zellij ~/.config/zellij
+# Apply configs with stow
+for pkg in "${packages[@]}"; do
+  stow -R -v "$pkg"
+done
 echo ""
 
 # Configure Git
