@@ -317,8 +317,10 @@ source ~/.zshrc
 zsh"
 
 # === Misc ===
-alias of="open -a Finder ."
-alias opdf="open -a Skim"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias of="open -a Finder ."
+  alias opdf="open -a Skim"
+fi
 
 # === Env ===
 source $HOME/.zsh/.env
