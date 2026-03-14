@@ -103,7 +103,7 @@ mv ~/.zshrc ~/.zshrc-backup
 
 # Apply configs with stow
 for pkg in "${packages[@]}"; do
-  stow -R -v "$pkg"
+  stow -R -v -t "$HOME" "$pkg"
 done
 echo ""
 
