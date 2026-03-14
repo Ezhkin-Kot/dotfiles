@@ -174,7 +174,6 @@ function y() {
 unalias nvim 2>/dev/null
 alias n="nvim"
 alias nvconf="cd ~/.config/nvim && nvim && cd -"
-alias ndot="cd ~/.config/nvim && nvim && cd -"
 
 # === Homebrew ===
 alias bi="brew install"
@@ -311,6 +310,7 @@ arcu() {
 }
 
 # === Edit this config ===
+alias ndot="cd $DOTFILES_DIR && nvim && cd -"
 alias nzsh="nvim ~/.zshrc"
 alias rzsh="
 source ~/.zshrc
