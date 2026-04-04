@@ -5,6 +5,14 @@ typeset -U path PATH
 # Dark magic of zsh to get absolute path of dotfiles directory
 DOTFILES_DIR="${${(%):-%x}:A:h:h}"
 
+# === Theme Manager ===
+
+# Load themes
+[[ -f "$HOME/.zsh/themes/theme-local.zsh" ]] && \
+  source "$HOME/.zsh/themes/theme-local.zsh"
+
+path+=("$HOME/.zsh/")
+
 # === Powerlevel10k ===
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -160,12 +168,6 @@ _fzf_comprun() {
     *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
 }
-
-# === Theme Manager ===
-[[ -f "$HOME/.zsh/themes/theme-local.zsh" ]] && \
-  source "$HOME/.zsh/themes/theme-local.zsh"
-
-path+=("$HOME/.zsh/")
 
 # === Yazi ===
 function y() {
