@@ -1,0 +1,15 @@
+themes {
+    ash {
+        bg      "#1a1a1a"
+        fg      "#c8c8c8"
+        red     "#e05c3a"
+        green   "#aaaaaa"
+        blue    "#888888"
+        yellow  "#d4a472"
+        magenta "#b09090"
+        orange  "#e07b3a"
+        cyan    "#a8a8a8"
+        black   "#0f0f0f"
+        white   "#e8e8e8"
+    }
+}

@@ -1,0 +1,15 @@
+themes {
+    chalk {
+        bg      "#f5f2ee"
+        fg      "#2a2520"
+        red     "#1a1a1a"
+        green   "#888078"
+        blue    "#666058"
+        yellow  "#555048"
+        magenta "#888078"
+        orange  "#444038"
+        cyan    "#777068"
+        black   "#ede9e3"
+        white   "#1a1a1a"
+    }
+}
