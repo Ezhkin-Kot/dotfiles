@@ -48,14 +48,13 @@ plugins=(
 )
 
 ZVM_VI_EDITOR=nvim
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 # zsh completions
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
