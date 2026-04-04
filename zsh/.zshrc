@@ -39,12 +39,12 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
-  zsh-syntax-highlighting 
-  zsh-autosuggestions 
-  zsh-vi-mode 
-  web-search 
-  copyfile 
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  zsh-vi-mode
+  web-search
+  copyfile
 )
 
 ZVM_VI_EDITOR=nvim
@@ -122,21 +122,21 @@ source ~/.fzf-git.sh/fzf-git.sh
 
 # Set keybindings for zsh-vi-mode insert mode
 function zvm_after_init() {
-    zvm_bindkey viins "^P" up-line-or-beginning-search
-    zvm_bindkey viins "^N" down-line-or-beginning-search
-    for o in files branches tags remotes hashes stashes lreflogs each_ref; do
-        eval "zvm_bindkey viins '^f^${o[1]}' fzf-git-$o-widget"
-        eval "zvm_bindkey viins '^f${o[1]}' fzf-git-$o-widget"
-    done
+  zvm_bindkey viins "^P" up-line-or-beginning-search
+  zvm_bindkey viins "^N" down-line-or-beginning-search
+  for o in files branches tags remotes hashes stashes lreflogs each_ref; do
+    eval "zvm_bindkey viins '^f^${o[1]}' fzf-git-$o-widget"
+    eval "zvm_bindkey viins '^f${o[1]}' fzf-git-$o-widget"
+  done
 }
 # Set keybindings for zsh-vi-mode normal and visual modes
 function zvm_after_lazy_keybindings() {
-    for o in files branches tags remotes hashes stashes lreflogs each_ref; do
-        eval "zvm_bindkey vicmd '^f^${o[1]}' fzf-git-$o-widget"
-        eval "zvm_bindkey vicmd '^f${o[1]}' fzf-git-$o-widget"
-        eval "zvm_bindkey visual '^f^${o[1]}' fzf-git-$o-widget"
-        eval "zvm_bindkey visual '^f${o[1]}' fzf-git-$o-widget"
-    done
+  for o in files branches tags remotes hashes stashes lreflogs each_ref; do
+    eval "zvm_bindkey vicmd '^f^${o[1]}' fzf-git-$o-widget"
+    eval "zvm_bindkey vicmd '^f${o[1]}' fzf-git-$o-widget"
+    eval "zvm_bindkey visual '^f^${o[1]}' fzf-git-$o-widget"
+    eval "zvm_bindkey visual '^f${o[1]}' fzf-git-$o-widget"
+  done
 }
 
 # == fzf preview ==
@@ -169,11 +169,11 @@ source "$HOME/.zsh/themes/zellij-themes.zsh"
 
 # === Yazi ===
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
 }
 
 # === Nvim ===
