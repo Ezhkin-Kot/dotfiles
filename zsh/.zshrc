@@ -1,5 +1,7 @@
 # ===x=== ZSH CONFIG ===x===
 
+typeset -U path PATH
+
 # Dark magic of zsh to get absolute path of dotfiles directory
 DOTFILES_DIR="${${(%):-%x}:A:h:h}"
 
@@ -84,9 +86,8 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH=$PATH:$HOME/.local/bin
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+path=("$HOME/.cargo/bin" $path)
+path=("$HOME/.local/bin" $path)
 
 # === FZF ===
 eval "$(fzf --zsh)"
@@ -163,6 +164,8 @@ _fzf_comprun() {
 # === Theme Manager ===
 [[ -f "$HOME/.zsh/themes/theme-local.zsh" ]] && \
   source "$HOME/.zsh/themes/theme-local.zsh"
+
+path+=("$HOME/.zsh/")
 
 # === Yazi ===
 function y() {
@@ -249,7 +252,7 @@ alias twm="typst watch main.typ"
 
 # === Dotnet ===
 export DOTNET_ROOT=/usr/local/share/dotnet
-export PATH=$PATH:$DOTNET_ROOT
+path+=("$DOTNET_ROOT")
 alias db="dotnet build"
 alias dr="dotnet run"
 
@@ -317,7 +320,7 @@ alias ndot="cd $DOTFILES_DIR && nvim && cd -"
 alias nzsh="nvim ~/.zshrc"
 alias rzsh="
 source ~/.zshrc
-zsh"
+exec zsh"
 
 # === Misc ===
 if [[ "$OSTYPE" == "darwin"* ]]; then
