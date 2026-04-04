@@ -17,7 +17,7 @@ function apply_p10k_theme() {
 
 function apply_ghostty_theme() {
   export GHOSTTY_THEME="$1"
-  sed -i '' "s/^theme =.*/theme = $t/" $HOME/.config/ghostty/config
+  sed -i '' "s/^theme =.*/theme = $1/" $HOME/.config/ghostty/config
 }
 
 function save_state() {
