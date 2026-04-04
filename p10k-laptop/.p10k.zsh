@@ -32,7 +32,7 @@
 #
 # COLOR_GO="#76E1FE"
 # COLOR_DOTNET="#B078DD"
-source ~/.zsh/p10k-themes.zsh
+source ~/.zsh/themes/p10k-themes.zsh
 
 
 # Temporarily change options.
