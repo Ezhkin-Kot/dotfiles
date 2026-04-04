@@ -13,25 +13,26 @@
 #   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 
 ###########################################[ colors ]###########################################
-COLOR_0="#282737"           # black
-COLOR_1="#f38ba8"           # red
-COLOR_2="#abe9b4"           # green
-COLOR_3="#fae3b0"           # yellow
-COLOR_4="#89b4fa"           # blue
-COLOR_5="#cba6f8"           # magenta
-COLOR_6="#89dceb"           # cyan
-COLOR_7="#bfc6d4"           # white
-COLOR_8="#313244"           # bright black
-# COLOR_9="#f38ba8"           # bright red
-# COLOR_10="#abe9b4"          # bright green
-# COLOR_11="#fae3b0"          # bright yellow
-# COLOR_12="#89b4fa"          # bright blue
-# COLOR_13="#cba6f8"          # bright magenta
-# COLOR_14="#89dceb"          # bright cyan
-COLOR_15="#d9e0ee"          # bright white
-
-COLOR_GO="#76E1FE"
-COLOR_DOTNET="#B078DD"
+# COLOR_0="#282737"           # black
+# COLOR_1="#f38ba8"           # red
+# COLOR_2="#abe9b4"           # green
+# COLOR_3="#fae3b0"           # yellow
+# COLOR_4="#89b4fa"           # blue
+# COLOR_5="#cba6f8"           # magenta
+# COLOR_6="#89dceb"           # cyan
+# COLOR_7="#bfc6d4"           # white
+# COLOR_8="#313244"           # bright black
+# # COLOR_9="#f38ba8"           # bright red
+# # COLOR_10="#abe9b4"          # bright green
+# # COLOR_11="#fae3b0"          # bright yellow
+# # COLOR_12="#89b4fa"          # bright blue
+# # COLOR_13="#cba6f8"          # bright magenta
+# # COLOR_14="#89dceb"          # bright cyan
+# COLOR_15="#d9e0ee"          # bright white
+#
+# COLOR_GO="#76E1FE"
+# COLOR_DOTNET="#B078DD"
+source ~/.zsh/p10k-themes.zsh
 
 
 # Temporarily change options.
