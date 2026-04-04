@@ -1,0 +1,96 @@
+layout {
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+        color_base         "#ede9e3"
+        color_mantle       "#e5e0d8"
+        color_crust        "#ddd8d0"
+        color_surface_dark "#f5f2ee"
+        color_surface0     "#ede9e3"
+        color_surface1     "#e5e0d8"
+        color_surface2     "#ddd8d0"
+
+        color_overlay0     "#aaa49c"
+        color_overlay1     "#999388"
+        color_overlay2     "#888078"
+
+        color_text         "#2a2520"
+        color_subtext0     "#666058"
+        color_subtext1     "#555048"
+
+        color_black        "#f5f2ee"
+        color_blue         "#666058"
+        color_flamingo     "#7a6050"
+        color_gold         "#7a6848"
+        color_gray         "#ccc8c0"
+        color_green        "#888078"
+        color_lavender     "#7a7068"
+        color_maroon       "#2a2520"
+        color_mauve        "#888078"
+        color_peach        "#6a5040"
+        color_pink         "#8a7870"
+        color_red          "#1a1a1a"
+        color_rosewater    "#8a7060"
+        color_sapphire     "#777068"
+        color_silver       "#2a2520"
+        color_silver_light "#1a1a1a"
+        color_sky          "#888888"
+        color_teal         "#777068"
+        color_yellow       "#555048"
+
+        format_left   "#[fg=$surface0] ▓#[bg=$surface0,fg=$silver_light]{session} #[bg=$surface_dark,fg=$surface0]{mode} {tabs}"
+        format_center "{notifications}"
+        format_right  "#[fg=$silver]#[bg=$silver,fg=$surface_dark] 󰃭 #[bg=$silver,fg=$surface_dark] {datetime}#[fg=$silver]▓ "
+        format_space  ""
+        format_hide_on_overlength "true"
+        format_precedence "lrc"
+
+        border_enabled  "false"
+        border_char     "─"
+        border_format   "{char}"
+        border_position "none"
+
+        hide_frame_for_single_pane "false"
+
+        mode_normal        "#[bg=$surface_dark,fg=$blue,bold] 󰿆 #[fg=$surface_dark]"
+        mode_tmux          "#[bg=$surface_dark,fg=$mauve,bold] TMUX #[fg=$surface_dark]"
+        mode_locked        "#[bg=$surface_dark,fg=$red,bold] 󰍁 #[fg=$surface_dark]"
+        mode_pane          "#[bg=$surface_dark,fg=$teal,bold]  #[fg=$surface_dark]"
+        mode_tab           "#[bg=$surface_dark,fg=$teal,bold]  #[fg=$surface_dark]"
+        mode_scroll        "#[bg=$surface_dark,fg=$flamingo,bold] SCROLL #[fg=$surface_dark]"
+        mode_enter_search  "#[bg=$surface_dark,fg=$flamingo,bold] ENT-SEARCH #[fg=$surface_dark]"
+        mode_search        "#[bg=$surface_dark,fg=$flamingo,bold] SEARCHARCH #[fg=$surface_dark]"
+        mode_resize        "#[bg=$surface_dark,fg=$yellow,bold] RESIZE #[fg=$surface_dark]"
+        mode_rename_tab    "#[bg=$surface_dark,fg=$yellow,bold] RENAME-TAB #[fg=$surface_dark]"
+        mode_rename_pane   "#[bg=$surface_dark,fg=$yellow,bold] RENAME-PANE #[fg=$surface_dark]"
+        mode_move          "#[bg=$surface_dark,fg=$yellow,bold] MOVE #[fg=$surface_dark]"
+        mode_session       "#[bg=$surface_dark,fg=$pink,bold] SESSION #[fg=$surface_dark]"
+        mode_prompt        "#[bg=$surface_dark,fg=$pink,bold] PROMPT #[fg=$surface_dark]"
+
+        tab_normal              "#[fg=$surface0]#[bg=$surface0,fg=$silver_light,bold]{index}#[bg=$surface_dark,fg=$surface0]#[bg=$surface_dark,fg=$silver] {name}{floating_indicator} #[fg=$surface_dark]"
+        tab_normal_fullscreen   "#[fg=$surface0]#[bg=$surface0,fg=$silver_light,bold]{index}#[bg=$surface_dark,fg=$surface0]#[bg=$surface_dark,fg=$silver] {name}{fullscreen_indicator} #[fg=$surface_dark]"
+        tab_normal_sync         "#[fg=$surface0]#[bg=$surface0,fg=$silver_light,bold]{index}#[bg=$surface_dark,fg=$surface0]#[bg=$surface_dark,fg=$silver] {name}{sync_indicator} #[fg=$surface_dark]"
+        tab_active              "#[fg=$silver]#[bg=$silver,fg=$surface_dark,bold]{index}#[bg=$surface0,fg=$silver]#[bg=$surface0,fg=$silver_light,bold] {name}{floating_indicator} #[fg=$surface0]"
+        tab_active_fullscreen   "#[fg=$silver]#[bg=$silver,fg=$surface_dark,bold]{index}#[bg=$surface0,fg=$silver]#[bg=$surface0,fg=$silver_light,bold] {name}{fullscreen_indicator} #[fg=$surface0]"
+        tab_active_sync         "#[fg=$silver]#[bg=$silver,fg=$surface_dark,bold]{index}#[bg=$surface0,fg=$silver]#[bg=$surface0,fg=$silver_light,bold] {name}{sync_indicator} #[fg=$surface0]"
+        tab_separator           " "
+
+        tab_sync_indicator       " "
+        tab_fullscreen_indicator " 󰊓"
+        tab_floating_indicator   " 󰹙"
+
+        notification_format_unread "#[bg=surface0,fg=$yellow]#[bg=$yellow,fg=$crust] #[bg=$surface1,fg=$yellow] {message}#[fg=$yellow]"
+        notification_format_no_notifications ""
+        notification_show_interval "10"
+
+        datetime          "{format}"
+        datetime_format   "%Y-%m-%d  %H:%M:%S "
+        datetime_timezone "Europe/Saratov"
+      }
+    }
+    children
+    // pane size=1 borderless=true {
+    //   plugin location="zellij:status-bar"
+    // }
+  }
+}
