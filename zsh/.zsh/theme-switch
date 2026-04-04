@@ -7,18 +7,18 @@ ZELLIJ_CONFIG="$HOME/.config/zellij/config.kdl"
 GHOSTTY_CONFIG="$HOME/.config/ghostty/config"
 
 apply_zellij_theme() {
-  export ZELLIJ_THEME="$1"
+  ZELLIJ_THEME="$1"
   sed -i '' "s/^default_layout .*/default_layout \"$1\"/" "$ZELLIJ_CONFIG"
   sed -i '' "s/^theme .*/theme \"$1\"/" "$ZELLIJ_CONFIG"
 }
 
 apply_p10k_theme() {
-  export P10K_THEME="$1"
+  P10K_THEME="$1"
   [[ -f $HOME/.p10k.zsh ]] && source $HOME/.p10k.zsh
 }
 
 apply_ghostty_theme() {
-  export GHOSTTY_THEME="$1"
+  GHOSTTY_THEME="$1"
   if [[ $GHOSTTY_THEME == "default" ]]; then
     GHOSTTY_THEME="Catppuccin Mocha"
   fi
@@ -95,3 +95,5 @@ echo "Theme '$THEME' applied to:"
 $apply_z && echo "  zellij"
 $apply_p && echo "  p10k"
 $apply_g && echo "  ghostty"
+
+exec zsh
