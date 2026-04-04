@@ -1,26 +1,31 @@
 #!/bin/zsh
 
-THEMES=(ash chalk custom)
+THEMES=(ash chalk default)
 
 STATE_FILE="$HOME/.zsh/themes/theme-local.zsh"
-ZELLIJ_THEMES="$HOME/.config/zsh/zellij-themes.zsh"
+ZELLIJ_CONFIG="$HOME/.config/zellij/config.kdl"
+GHOSTTY_CONFIG="$HOME/.config/ghostty/config"
 
-function apply_zellij_theme() {
+apply_zellij_theme() {
   export ZELLIJ_THEME="$1"
-  source "$ZELLIJ_THEMES"
+  sed -i '' "s/^default_layout .*/default_layout \"$1\"/" "$ZELLIJ_CONFIG"
+  sed -i '' "s/^theme .*/theme \"$1\"/" "$ZELLIJ_CONFIG"
 }
 
-function apply_p10k_theme() {
+apply_p10k_theme() {
   export P10K_THEME="$1"
   [[ -f $HOME/.p10k.zsh ]] && source $HOME/.p10k.zsh
 }
 
-function apply_ghostty_theme() {
+apply_ghostty_theme() {
   export GHOSTTY_THEME="$1"
-  sed -i '' "s/^theme =.*/theme = $1/" $HOME/.config/ghostty/config
+  if [[ $GHOSTTY_THEME == "default" ]]; then
+    GHOSTTY_THEME="Catppuccin Mocha"
+  fi
+  sed -i '' "s/^theme =.*/theme = $GHOSTTY_THEME/" $HOME/.config/ghostty/config
 }
 
-function save_state() {
+save_state() {
   cat > "$STATE_FILE" <<EOF
 export ZELLIJ_THEME="${ZELLIJ_THEME}"
 export P10K_THEME="${P10K_THEME}"
@@ -28,10 +33,10 @@ export GHOSTTY_THEME="${GHOSTTY_THEME}"
 EOF
 }
 
-function fzf_pick() {
+fzf_pick() {
   printf '%s\n' "${THEMES[@]}" | fzf \
     --prompt "theme > " \
-    --height 6 \
+    --height 16 \
     --layout reverse \
     --border rounded \
     --no-info

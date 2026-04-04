@@ -164,9 +164,6 @@ _fzf_comprun() {
 [[ -f "$HOME/.zsh/themes/theme-local.zsh" ]] && \
   source "$HOME/.zsh/themes/theme-local.zsh"
 
-source "$HOME/.zsh/themes/zellij-themes.zsh"
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
 # === Yazi ===
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
