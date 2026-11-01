@@ -246,6 +246,9 @@ alias cch="cargo check"
 alias ccl="cargo clippy"
 alias cinit="cargo init"
 
+# === SML/NJ ===
+alias sml="rlwrap sml"
+
 # === Typst ===
 alias tc="typst compile"
 alias tcm="typst compile main.typ"
@@ -276,46 +279,7 @@ alias tsip="tailscale ip"
 # === arduino-cli ===
 alias arc="arduino-cli"
 
-arduino_select_fqbn() {
-  local LINE
-  local CACHE="$HOME/.arduino_last_fqbn"
-
-  LINE=$(arduino-cli board listall \
-    | sed 1d \
-    | fzf --prompt="Select board: " \
-          --query="$(cat "$CACHE" 2>/dev/null)")
-
-  [ -z "$LINE" ] && return 1
-
-  echo "$LINE" | awk '{print $NF}' | tee "$CACHE"
-}
-
-arcc() {
-  local FQBN
-
-  FQBN=$(arduino_select_fqbn) || return 1
-
-  echo "Compiling for $FQBN"
-  arduino-cli compile --fqbn "$FQBN" .
-}
-
-arcu() {
-  local PORT FQBN
-
-  PORT=$(arduino-cli board list \
-    | awk 'NR>1 {print $1}' \
-    | fzf --prompt="Select port: ")
-
-  [ -z "$PORT" ] && return 1
-
-  FQBN=$(arduino_select_fqbn) || return 1
-
-  echo "Compiling for $FQBN"
-  arduino-cli compile --fqbn "$FQBN" . || return 1
-
-  echo "Uploading to $PORT"
-  arduino-cli upload -p "$PORT" --fqbn "$FQBN" .
-}
+source $HOME/.zsh/arduino-cli-helper.zsh
 
 # === Edit this config ===
 alias ndot="cd $DOTFILES_DIR && nvim && cd -"
@@ -328,6 +292,10 @@ exec zsh"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   alias of="open -a Finder ."
   alias opdf="open -a Skim"
+  alias tco="typst compile --open Skim"
+  alias tcmo="typst compile --open Skim main.typ"
+  alias two="typst watch --open Skim"
+  alias twmo="typst watch --open Skim main.typ"
 fi
 
 # === Env ===
